@@ -1,0 +1,8 @@
+{
+  "config.autoinventorytotem.title": "AutoInventoryTotem Configuration",
+  "config.autoinventorytotem.category.general": "General",
+  "config.autoinventorytotem.hotbarSlot": "Monitored hotbar slot (1-9)",
+  "config.autoinventorytotem.monitorOffhand": "Monitor offhand",
+  "config.autoinventorytotem.autoRefill": "Auto-refill totems after pop",
+  "config.autoinventorytotem.switchToSlotAfterPop": "Switch to configured slot after offhand pop"
+}
