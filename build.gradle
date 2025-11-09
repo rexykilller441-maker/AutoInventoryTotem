@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.8-SNAPSHOT'
+    id 'fabric-loom' version '1.2.6'
     id 'maven-publish'
 }
 
@@ -8,10 +8,10 @@ group = project.maven_group
 archivesBaseName = project.archives_base_name
 
 repositories {
-    maven { url 'https://maven.fabricmc.net/' }
-    maven { url 'https://maven.shedaniel.me/' }
-    maven { url 'https://maven.terraformersmc.com/releases/' }
     mavenCentral()
+    maven { url = "https://maven.fabricmc.net/" }
+    maven { url = "https://maven.shedaniel.me/" }
+    maven { url = "https://maven.terraformersmc.com/releases/" }
 }
 
 dependencies {
