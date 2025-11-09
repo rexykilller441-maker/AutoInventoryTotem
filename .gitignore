@@ -1,40 +1,39 @@
-# gradle
-
+# Gradle
 .gradle/
 build/
 out/
 classes/
 
-# eclipse
-
-*.launch
-
-# idea
-
+# IntelliJ / Eclipse / VSCode
 .idea/
 *.iml
 *.ipr
 *.iws
-
-# vscode
-
-.settings/
 .vscode/
 bin/
-.classpath
-.project
-
-# macos
-
-*.DS_Store
-
-# fabric
-
 run/
 
-# java
+# Logs and crash reports
+logs/
+*.log
+*.lck
+crash-reports/
 
-hs_err_*.log
-replay_*.log
-*.hprof
-*.jfr
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Minecraft specific
+run/
+config/
+saves/
+mods/
+options.txt
+usercache.json
+usernamecache.json
+
+# Fabric Loom mappings cache
+.gradle/
+.gradle-cache/
+loom-cache/
