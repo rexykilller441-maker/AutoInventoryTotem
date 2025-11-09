@@ -3,8 +3,8 @@
   "id": "autoinventorytotem",
   "version": "1.0.0",
   "name": "AutoInventoryTotem",
-  "description": "Automatically keeps Totems of Undying in offhand and a configured hotbar slot, with Cloth Config + ModMenu support.",
-  "authors": ["YourName"],
+  "description": "Keeps Totems of Undying in offhand and chosen hotbar slot.",
+  "authors": ["REXYKILLER441"],
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
@@ -13,7 +13,7 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.XX",
+    "fabricloader": ">=0.15.11",
     "fabric": "*",
     "cloth-config2": "*",
     "modmenu": "*",
