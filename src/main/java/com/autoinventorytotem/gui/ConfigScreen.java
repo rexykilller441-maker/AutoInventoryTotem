@@ -1,5 +1,6 @@
 package com.autoinventorytotem.gui;
 
+import com.autoinventorytotem.ModConfigRegister;
 import com.autoinventorytotem.config.ModConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
@@ -11,34 +12,34 @@ import net.minecraft.text.Text;
 public class ConfigScreen {
 
     public static Screen createScreen(Screen parent) {
-        ModConfig cfg = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        ModConfig cfg = ModConfigRegister.CONFIG;
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Text.literal("AutoInventoryTotem Configuration"));
+                .setTitle(Text.literal("AutoInventoryTotem"));
 
-        ConfigEntryBuilder entryBuilder = builder.entryBuilder();
+        ConfigEntryBuilder eb = builder.entryBuilder();
         ConfigCategory general = builder.getOrCreateCategory(Text.literal("General"));
 
-        general.addEntry(entryBuilder.startIntField(Text.literal("Monitored hotbar slot (1-9)"), cfg.hotbarSlot)
+        general.addEntry(eb.startIntField(Text.literal("Monitored hotbar slot (1-9)"), cfg.hotbarSlot)
                 .setDefaultValue(6)
-                .setSaveConsumer(newVal -> cfg.hotbarSlot = newVal)
+                .setSaveConsumer(v -> cfg.hotbarSlot = v)
                 .setMin(1)
                 .setMax(9)
                 .build());
 
-        general.addEntry(entryBuilder.startBooleanToggle(Text.literal("Monitor offhand"), cfg.monitorOffhand)
+        general.addEntry(eb.startBooleanToggle(Text.literal("Monitor offhand"), cfg.monitorOffhand)
                 .setDefaultValue(true)
-                .setSaveConsumer(newVal -> cfg.monitorOffhand = newVal)
+                .setSaveConsumer(v -> cfg.monitorOffhand = v)
                 .build());
 
-        general.addEntry(entryBuilder.startBooleanToggle(Text.literal("Auto-refill totems after pop"), cfg.autoRefill)
+        general.addEntry(eb.startBooleanToggle(Text.literal("Auto-refill totems after pop"), cfg.autoRefill)
                 .setDefaultValue(true)
-                .setSaveConsumer(newVal -> cfg.autoRefill = newVal)
+                .setSaveConsumer(v -> cfg.autoRefill = v)
                 .build());
 
-        general.addEntry(entryBuilder.startBooleanToggle(Text.literal("Switch to configured slot after offhand pop"), cfg.switchToSlotAfterPop)
+        general.addEntry(eb.startBooleanToggle(Text.literal("Switch to configured slot after offhand pop"), cfg.switchToSlotAfterPop)
                 .setDefaultValue(true)
-                .setSaveConsumer(newVal -> cfg.switchToSlotAfterPop = newVal)
+                .setSaveConsumer(v -> cfg.switchToSlotAfterPop = v)
                 .build());
 
         builder.setSavingRunnable(() -> AutoConfig.getConfigHolder(ModConfig.class).save());
