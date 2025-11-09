@@ -1,4 +1,4 @@
-name: Build Mod
+name: AutoInventoryTotem Build
 
 on:
   push:
